@@ -1,2 +1,2 @@
-# E1S0-ServoControl
+# Maker's Digest - Servo Control
 Controlling Servos with Raspberry PI &amp; Arduino
