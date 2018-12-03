@@ -4,10 +4,12 @@
 ## Installation
 The wiringpi-complete.py example requires that software be installed on your pi.
 
+`sudo apt-get update`
+
 ### wiringpi
 `sudo apt-get install wiringpi`
 
-`sudo apt-get insatll wiringpy-python`
+`sudo pip install python-wiringpi`
 
 ### scipy module
-`sudo pip install scipy`
+`sudo apt-get install python-scipy`
