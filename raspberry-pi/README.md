@@ -30,7 +30,7 @@ gpio pwmr 2000
 
 
 ### Find lower range limit
-To find the lower range, run the following command replacing 'xx' with a range of 30-100 incrementing by 10's. Watch the servo and see where it starts to move. Once it moves, try -10 from the number that made it move. If it does not move at that number, go back to where you last saw it move. Thats the number you want. 
+To find the lower range, run the following command replacing 'xx' with a range of 30-100 incrementing by 10's. Watch the servo and see where it starts to move. Once it moves, try -10 from the number that made it move. If it does not move at that number, go back to where you last saw it move. Thats the number you want, keep track of it.
 
 `gpio -g pwm 18 xx`
 
@@ -43,5 +43,10 @@ gpio -g pwm 18 50
 ```
 
 ### Find the upper range limit
-Follow the same procedure as the lower range, but use a range of 190-270 instead of 30-100, again incrementing in 10's. . 
+Follow the same procedure as the lower range, but use a range of 190-270 instead of 30-100, again incrementing in 10's. .  Keep track of the number you find here. 
 
+
+## Update wiringpi-example.py with new found range. 
+Open the `wiringpi-example.py` file in your favorite editor and find the line that starts with `pw_range`. Replace the '50' with the lower number you found, and replace 260 with the higher number you found. 
+
+The script should now be calibrated for the full range of your servo.
