@@ -1,8 +1,9 @@
 # Maker's Digest
 ## Raspberry Pi Servo Control
+We are going to look at two different methods of controlling servos. The first example `gpio-example.py` uses the standard RPi.GPIO library. I personally prefer wiringpi. The second example `wiringpi-example.py` shows how to utilize this library.
 
 ## Installation
-The wiringpi-complete.py example requires that software be installed on your pi.
+These examples require software. Follow the instructions below to install the correct utilities and libraries.
 
 `sudo apt-get update`
 
