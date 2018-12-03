@@ -20,13 +20,12 @@ We need to determine what the actual range of the servo is. The specs for the SG
 Note: You must install wiringpi first
 
 ### Setup wiring pi for PWM
-`gpio -g mode 18 pwm`
-
-`gpio pwm-ms`
-
-`gpio pwmc 192`
-
-`gpio pwmr 2000`
+```
+gpio -g mode 18 pwm
+gpio pwm-ms
+gpio pwmc 192
+gpio pwmr 2000
+```
 
 
 ### Find lower range
