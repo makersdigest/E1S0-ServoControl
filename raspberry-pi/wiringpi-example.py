@@ -1,6 +1,6 @@
 ##
  # Maker's Digest
- # Servo Control
+ # WiringPI Servo Example
  #
  # Dont forget to install wiringpi and scipy! See README.md for details
 ##
@@ -9,6 +9,7 @@ from time import sleep  # Import sleep from time module
 from scipy.interpolate import interp1d  # scipy for interpolation
 
 pin = 18                # Using pin 18 on Raspberry Pi
+dly = .5                # 500ms Delay
 
 # Here we are going to setup our interpolation ranges.
 # To determine the pw_range, follow the directions in the README.md
@@ -30,17 +31,21 @@ wiringpi.pwmSetRange(2000)
 # waits half a second, then sets the pulse width to 0. In wiringpi
 # setting the pulsewidth to zero essentially turns off the servo. 
 # otherwise it will be jittery. 
-def setServoDegrees(deg):
+def setAngle(deg):
     wiringpi.pwmWrite(pin, int(interp_degrees(deg)))
-    sleep(0.5)
+    sleep(dly)
     wiringpi.pwmWrite(pin, 0)
     
 # run the example. 0 -> 90 -> 180 -> 90 -> 0 ...
-try:
-    while True:
-        setServoDegrees(0)
-        setServoDegrees(90)
-        setServoDegrees(180)
-        setServoDegrees(90)
-except KeyboardInterrupt:
-    wiringpi.pwmWrite(pin,0)
+def main(args=None):
+    try:
+        while True:
+            setAngle(0)
+            setAngle(90)
+            setAngle(180)
+            setAngle(90)
+    except KeyboardInterrupt:
+        wiringpi.pwmWrite(pin,0)
+
+if __name__ == "__main__":
+    main()
