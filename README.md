@@ -3,7 +3,7 @@ Controlling Servos with Raspberry PI &amp; Arduino
 
 This repository is compainion to the video below. 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Rq8XfGAF7uM/0.jpg)](https://www.youtube.com/watch?v=Rq8XfGAF7uM)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/hkN-xdZz-Gc/0.jpg)](https://www.youtube.com/watch?v=hkN-xdZz-Gc)
 
 ## Arduino
 The arduino code can be loaded into the arduino IDE by downloading and opening the .ino file. 
