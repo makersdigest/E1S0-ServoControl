@@ -1,10 +1,15 @@
 #include <Servo.h>
 
-Servo servo1;
+Servo s1;
+
+int degree_start = 0;       // Start of the range in degrees
+int degree_end = 360;       // End of the range in degrees
+int pin = 14;               // Pin 14 is Analog 0
+int dly = 125;              // Delay between loop iterations
 
 void setup() {
-  pinMode(1, OUTPUT);
-  servo1.attach(14); // Analog 0
+  pinMode(pin, OUTPUT);
+  s1.attach(pin);           // Analog 0
 
   Serial.begin(19200);
   Serial.println("Maker's Digest: Ready");
@@ -12,16 +17,17 @@ void setup() {
 
 void loop() {
   int i = 0;
-
   Serial.println("This is zero.");
-  servo1.write(i);
+  
+  s1.write(i);
   delay(1000);
-  for(i = 0; i <= 200; i++) {
-    servo1.write(i);
+  
+  for(i = degree_start; i <= degree_end; i++) {
+    s1.write(i);
     Serial.println(i);
-    delay(125);
+    delay(dly);
   }
 
   Serial.println("Done with test");
-  delay(1000);
+  delay(2000);
 }
